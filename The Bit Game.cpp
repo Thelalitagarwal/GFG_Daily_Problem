@@ -1,17 +1,14 @@
 class Solution{   
 public:
     int swapBitGame(long long N){
-        long long int c=0, d=0;
-        while(N){
-            if(N%2 && d>0)
-                c^=d;
-            if(N%2==0)
-                d++;
-            N/=2;
+        int cnt = 0;
+        long long n = N;
+        while(n > 0){
+            if(n & 1) cnt++;
+            n = n >> 1;
         }
-        if(c)
-            return 1;
-        else
-            return 2;
+        
+        if(cnt & 1) return 1;
+        return 2;
     }
 };
