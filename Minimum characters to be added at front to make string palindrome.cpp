@@ -1,26 +1,44 @@
-class Solution {
-    public:
-         int minChar(string str){
-            int l = str.length();
-            int i;
-            int j = l-1;
-            int j_temp = j;
-            i = 0;
-            int count = 0;
-            while (i<j)
-            {
-                if (str[i] == str[j])
-                {
-                    i++;
-                    j--;
-                }
-                else{
-                    count++;
-                    i = 0;
-                    j_temp--;
-                    j = j_temp;   
-                }
-            }
-            return count;
+class solution{
+public:
+int minChar(string str){
+
+         string s=str;
+
+         reverse(s.begin(),s.end());
+
+         str+='#';
+
+         str+=s;
+
+         int n=str.size();
+
+         vector<int>lps(n,0);
+
+         for(int i=1;i<n;i++){
+
+             int j=lps[i-1];
+
+             while(j>0&&str[i]!=str[j]){
+
+                 j=lps[j-1];
+
+             }
+
+             
+
+             if(str[i]==str[j]){
+
+                 j++;
+
+             }
+
+             lps[i]=j;
+
+           }
+
+         
+
+         return (n/2)-lps[n-1];
+
          }
 };
