@@ -21,7 +21,7 @@ class Solution {
 		       }
 		   }
 		   
-		   for(int i=N;i<=100000;i++){
+		   for(int i=N;i<=200000;i++){
 		       if(isPrime(i)){
 		           ans=min(ans,i-N);
 		           break;
