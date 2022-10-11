@@ -38,7 +38,7 @@ public:
                 stkc.push(temp);
             }
         }
-        ans ="";
+        ans  ="";
         while(stkc.top()!="#"){
            ans = stkc.top() + ans;
            stkc.pop();
