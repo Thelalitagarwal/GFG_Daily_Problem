@@ -2,7 +2,7 @@
 
 Link to the "Distance of nearest cell having 1" Problem ==>>  https://practice.geeksforgeeks.org/problems/3-divisors3942/1 
    
-Link to the complete Explaination Video ==>> https://youtu.be/8waTdK0iTls 
+Link to the complete Explaination Video ==>> https://youtu.be/xcZLT7MIoag 
    
 */
 
