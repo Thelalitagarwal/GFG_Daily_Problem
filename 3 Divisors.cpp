@@ -13,11 +13,12 @@ class Solution
 public:
     vector<int> threeDivisors(vector<long long> query, int q)
     {
+        vector<int>fin;
         vector<long long int>v;
-        long long int p=999990;
-        long long int arr[p]={0};
+        long long int p;
         long long int i,j;
-        
+        p=ceil(sqrt(*max_element(query.begin(), query.end())));
+        long long int arr[p]={0};
         for(i=2;i<=sqrt(p);i++){
             
             for(j=i*i;j<=p;j+=i)
@@ -29,7 +30,7 @@ public:
                 v.push_back(i);
         }
 
-        vector<int>fin;
+        
         
         for(i=0;i<query.size();i++){
             
