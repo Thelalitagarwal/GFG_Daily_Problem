@@ -7,36 +7,31 @@ Link to the complete Explaination Video ==>> https://youtu.be/Ua5othsS8A0
 
 class Solution {
 public:
-    Node *flatten(Node *root){
+     Node* merge(Node* a, Node* b){
+        Node* dummy= new Node(-1);
+        Node* curr=dummy;
+        while(a && b){
+            if(a->data<=b->data){
+                curr->bottom= new Node(a->data);
+                curr=curr->bottom;
+                a=a->bottom;
+            }
+            else{
+                curr->bottom= new Node(b->data);
+                curr=curr->bottom;
+                b=b->bottom;
+            }
+        }
+        if(a) curr->bottom=a;
+        if(b) curr->bottom=b;
         
-         Node* line= root->next;
-         while(line!=NULL){
-              Node* t=line;
-              Node* p=root;
-              Node* p_pre=NULL;
-            while(t!=NULL&&p!=NULL){
-                if(p->data>=t->data&&p==root){
-                       p_pre=t;
-                      t=t->bottom;
-                      p_pre->bottom=p;
-                      root=p_pre;
-                  }
-                else if(p->data>=t->data){
-                     p_pre->bottom=t;
-                    t=t->bottom;
-                    p_pre=p_pre->bottom;
-                    p_pre->bottom=p;
-                }
-                else{
-                    p_pre=p;
-                    p=p->bottom;
-                }
-           }
-           if(p==NULL&&t!=NULL)
-              p_pre->bottom=t;
-            
-           line=line->next;
-       }
-      return root;  
+        return dummy->bottom;
+    }
+    Node *flatten(Node *root)
+    {
+        // Your code here
+        if(!root->next) return root;
+        Node* ans= merge(root, flatten(root->next));
+        return ans;
     }
 };
