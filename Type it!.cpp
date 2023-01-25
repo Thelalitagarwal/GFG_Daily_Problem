@@ -13,6 +13,6 @@ class Solution {
                 ans = min(ans, ctr);
             }
         }
-        return ans;
+        return (ans==INT_MAX)? s.size(): ans;
     }
 };
