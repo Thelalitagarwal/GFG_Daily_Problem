@@ -24,6 +24,6 @@ public:
                 return str.length()-i;
             }
         }
-        return str.length();
+        return str.length()-1;
     }
 };
