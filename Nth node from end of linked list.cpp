@@ -1,3 +1,5 @@
+Link to the problem: https://practice.geeksforgeeks.org/problems/nth-node-from-end-of-linked-list/1
+
 int getNthFromLast(Node *head, int n)
 {
        Node* slow=head,*fast=head;
