@@ -1,3 +1,5 @@
+Link to the problem: https://practice.geeksforgeeks.org/problems/reversing-the-equation2205/1
+
 class Solution{
   public:
     string reverseEqn (string s){
