@@ -1,3 +1,5 @@
+Link to the Problem: https://practice.geeksforgeeks.org/problems/find-kth-permutation-0932/1
+
 class Solution{
 public:
     string kthPermutation(int n, int k){
